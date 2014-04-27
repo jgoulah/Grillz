@@ -1,0 +1,16 @@
+#Xcode-related files
+/xcuserdata/
+/build/
+*.pbxuser
+*.mode1v3
+version.xcconfig
+*.xcuserdatad
+*.perspectivev3
+
+#OCLint checker output
+compile_commands.json
+xcodebuild.log
+
+#OSX-related noise
+.DS_Store
+profile
