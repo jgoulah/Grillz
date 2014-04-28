@@ -52,30 +52,12 @@
     
 }
 
-- (void)stubsOn {
-    //NSArray* stubs = [NSArray arrayWithObjects:@"cyberq", nil];
-    
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
-        //return [stubs containsObject:request.URL.absoluteString.lastPathComponent];
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        
-        NSString* file = [request.URL.absoluteString.lastPathComponent
-                          stringByAppendingPathExtension:@"xml"];
-        NSLog(@"file is %@", file);
-        
-        
-        return [OHHTTPStubsResponse responseWithFile:file contentType:@"text/xml"
-                                        responseTime:OHHTTPStubsDownloadSpeedEDGE];
-    }];
-}
-
 - (void)testGetCyberQStatus
 {
-    [self stubsOn];
     static const NSTimeInterval kResponseTime = 1.0;
     
     GrillNet* gn = [[GrillNet alloc] init];
+    [gn stubsOn];
     gn.delegate = self;
     [gn getGrillStatusWithURL:@"http://test/cyberq"];
     

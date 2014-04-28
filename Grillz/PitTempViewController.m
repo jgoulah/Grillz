@@ -68,9 +68,11 @@
     
     _tempatureLabel = [[UILabel alloc] init];
     _tempatureLabel.frame = CGRectMake(75, 200, 200, 100);
-    UIColor* color = [UIColor colorWithRed:0.4 green:0.8 blue:0.9 alpha:0.8];
+    UIColor* color = [UIColor colorWithRed:0.4 green:0.8 blue:0.9 alpha:0.5];
     _tempatureLabel.backgroundColor = color;
     _tempatureLabel.text = @"0";
+    _tempatureLabel.layer.cornerRadius = 5.0f;
+    _tempatureLabel.clipsToBounds = YES;
     [self.view addSubview:_tempatureLabel];
 
     

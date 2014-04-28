@@ -33,13 +33,13 @@
 		8A7CB18D190D5D6A00519ED5 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7CB17B190D5D6A00519ED5 /* AFURLResponseSerialization.m */; };
 		8A7CB18E190D5D6A00519ED5 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7CB17D190D5D6A00519ED5 /* AFURLSessionManager.m */; };
 		8A7CB18F190D5D6A00519ED5 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7CB17D190D5D6A00519ED5 /* AFURLSessionManager.m */; };
+		8A7CB190190E00D700519ED5 /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C150017B8355B00B86D95 /* OHHTTPStubs.m */; };
+		8A7CB191190E00D700519ED5 /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C150217B8355B00B86D95 /* OHHTTPStubsResponse.m */; };
 		8A9C14DE17A5A2D200B86D95 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9C14DD17A5A2D200B86D95 /* MobileCoreServices.framework */; };
 		8A9C14DF17B6E9D400B86D95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9C14DB17A5A2CA00B86D95 /* SystemConfiguration.framework */; };
 		8A9C14FD17B8313200B86D95 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9C14DD17A5A2D200B86D95 /* MobileCoreServices.framework */; };
 		8A9C14FE17B8313D00B86D95 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A9C14DB17A5A2CA00B86D95 /* SystemConfiguration.framework */; };
-		8A9C150317B8355B00B86D95 /* OHHTTPStubs.h in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C14FF17B8355B00B86D95 /* OHHTTPStubs.h */; };
 		8A9C150417B8355B00B86D95 /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C150017B8355B00B86D95 /* OHHTTPStubs.m */; };
-		8A9C150517B8355B00B86D95 /* OHHTTPStubsResponse.h in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C150117B8355B00B86D95 /* OHHTTPStubsResponse.h */; };
 		8A9C150617B8355B00B86D95 /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C150217B8355B00B86D95 /* OHHTTPStubsResponse.m */; };
 		8A9C150A17B840C300B86D95 /* AsyncSenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A9C150917B840C300B86D95 /* AsyncSenTestCase.m */; };
 		8ABCC35317C05D0700B8641D /* cyberq.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8ABCC35217C05D0700B8641D /* cyberq.xml */; };
@@ -230,6 +230,17 @@
 			path = Libraries/AFNetworking;
 			sourceTree = "<group>";
 		};
+		8A7CB192190E00ED00519ED5 /* OHHTTPStubs */ = {
+			isa = PBXGroup;
+			children = (
+				8A9C14FF17B8355B00B86D95 /* OHHTTPStubs.h */,
+				8A9C150017B8355B00B86D95 /* OHHTTPStubs.m */,
+				8A9C150117B8355B00B86D95 /* OHHTTPStubsResponse.h */,
+				8A9C150217B8355B00B86D95 /* OHHTTPStubsResponse.m */,
+			);
+			name = OHHTTPStubs;
+			sourceTree = "<group>";
+		};
 		8ABCC35517C06CBB00B8641D /* RaptureXML */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,10 +254,6 @@
 		8AFAF93717A4BCE400A9DC04 = {
 			isa = PBXGroup;
 			children = (
-				8A9C14FF17B8355B00B86D95 /* OHHTTPStubs.h */,
-				8A9C150017B8355B00B86D95 /* OHHTTPStubs.m */,
-				8A9C150117B8355B00B86D95 /* OHHTTPStubsResponse.h */,
-				8A9C150217B8355B00B86D95 /* OHHTTPStubsResponse.m */,
 				8AFAF98317A4C51900A9DC04 /* Libraries */,
 				8AFAF94917A4BCE400A9DC04 /* Grillz */,
 				8AFAF96217A4BCE400A9DC04 /* GrillzTests */,
@@ -332,6 +339,7 @@
 		8AFAF98317A4C51900A9DC04 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				8A7CB192190E00ED00519ED5 /* OHHTTPStubs */,
 				8A7CB16A190D5D6A00519ED5 /* AFNetworking */,
 				8A7CB151190D4AB400519ED5 /* DCIntrospect-ARC */,
 				8ABCC35517C06CBB00B8641D /* RaptureXML */,
@@ -437,6 +445,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A7CB190190E00D700519ED5 /* OHHTTPStubs.m in Sources */,
+				8A7CB191190E00D700519ED5 /* OHHTTPStubsResponse.m in Sources */,
 				8A7CB17E190D5D6A00519ED5 /* AFHTTPRequestOperation.m in Sources */,
 				8A7CB162190D4AB400519ED5 /* DCStatusBarOverlay.m in Sources */,
 				8A7CB15F190D4AB400519ED5 /* DCCrossHairView.m in Sources */,
@@ -466,14 +476,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A7CB187190D5D6A00519ED5 /* AFSecurityPolicy.m in Sources */,
-				8A9C150317B8355B00B86D95 /* OHHTTPStubs.h in Sources */,
 				8A7CB185190D5D6A00519ED5 /* AFNetworkReachabilityManager.m in Sources */,
 				8A9C150417B8355B00B86D95 /* OHHTTPStubs.m in Sources */,
 				8A7CB189190D5D6A00519ED5 /* AFURLConnectionOperation.m in Sources */,
 				8A7CB17F190D5D6A00519ED5 /* AFHTTPRequestOperation.m in Sources */,
 				8A7CB183190D5D6A00519ED5 /* AFHTTPSessionManager.m in Sources */,
 				8A7CB18B190D5D6A00519ED5 /* AFURLRequestSerialization.m in Sources */,
-				8A9C150517B8355B00B86D95 /* OHHTTPStubsResponse.h in Sources */,
 				8A7CB18F190D5D6A00519ED5 /* AFURLSessionManager.m in Sources */,
 				8ABCC36317C0766B00B8641D /* GrillStatus.m in Sources */,
 				8A7CB181190D5D6A00519ED5 /* AFHTTPRequestOperationManager.m in Sources */,

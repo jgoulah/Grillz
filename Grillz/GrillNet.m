@@ -9,6 +9,7 @@
 #import "GrillNet.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "RXMLElement.h"
+#import "OHHTTPStubs.h"
 
 @implementation GrillNet
 
@@ -18,7 +19,29 @@
     return self;
 }
 
+
+- (void)stubsOn {
+
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        
+//        NSString* file = [request.URL.absoluteString.lastPathComponent
+//                          stringByAppendingPathExtension:@"xml"];
+        NSString* file = @"cyberq.xml";
+        NSLog(@"file is %@", file);
+        
+        
+        return [OHHTTPStubsResponse responseWithFile:file contentType:@"text/xml"
+                                        responseTime:OHHTTPStubsDownloadSpeedEDGE];
+    }];
+ 
+ 
+}
+
+
 -(void)getGrillStatusWithURL:(NSString*)url {
+    [self stubsOn];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setResponseSerializer:[AFXMLParserResponseSerializer serializer]];
